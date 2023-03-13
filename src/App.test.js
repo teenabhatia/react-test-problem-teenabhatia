@@ -19,6 +19,8 @@ it('renders the default button label', () => {
     expect(button).toHaveTextContent('Thanks!');
   });
 
+  // I have added a third test below to check that the button text changes back to "click me" from "thanks"
+
   it('changes the button label back on click', () => {
     const { getByText } = render(<Default />);
     const button = getByText('Click me');
