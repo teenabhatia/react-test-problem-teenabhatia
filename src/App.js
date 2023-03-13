@@ -4,17 +4,23 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      
+      clicked: false
     };
   }
 
-  //handler goes here
+  handleClick = () => {
+    this.setState(prevState => ({
+      clicked: !prevState.clicked
+    }));
+  }
 
   render() {
     return (
       <div>
         <p>Greetings!</p>
-        <p>Button goes here</p>
+        <button onClick={this.handleClick}>
+          {this.state.clicked ? 'Thanks!' : 'Click me'}
+        </button>
       </div>
     );
   }
